@@ -52,7 +52,7 @@ namespace Wordle
 
         public bool GameFinished()
         {
-            if (this.attempts.Count == maxAttempts || wonGame) // TODO: or if an attempt is all green
+            if (this.attempts.Count == maxAttempts || wonGame) // TODO: done
             {
                 return true;
             }
