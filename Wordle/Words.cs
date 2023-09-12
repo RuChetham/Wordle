@@ -44,10 +44,7 @@ namespace Wordle
         {
             foreach (Word word in attempts)
             {
-                if (word.OutputGuess(correct))
-                {
-                    wonGame = true; // unnecessary
-                }
+                word.OutputGuess(correct);
             }
         }
 

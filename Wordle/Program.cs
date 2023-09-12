@@ -26,7 +26,7 @@ namespace Wordle
                     Console.WriteLine($" ({words.GetSize()})");
                     words.DisplayAttempt();
                     Console.Write("Enter Guess: ");
-                    guess = Console.ReadLine().ToUpper() ?? String.Empty;
+                    guess = (Console.ReadLine() ?? String.Empty).ToUpper();
                 } while (guess.Length != theWord.Length);
                 words.MakeAttempt(guess);
             }
@@ -34,8 +34,7 @@ namespace Wordle
             words.DisplayAttempt();
             Console.WriteLine($"\nYou Have Guessed The Word " +
                 $"{(words.GuessedWord() ? "Correctly" : "Incorrectly")}" +
-                $"\nThe Word is \u001b[32;1m{theWord}");
-            Console.ResetColor();
+                $"\nThe Word is (\u001b[32;1m{theWord}\u001b[0m)");
         }
     }
 }
