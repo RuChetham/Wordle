@@ -8,7 +8,7 @@ namespace Wordle
         static void Main(string[] args)
         {
             int wordGuesses = 5;
-            string theWord = "Wordle";
+            string theWord = "Word";
 
             Words words = new Words(wordGuesses, theWord);
 
@@ -33,7 +33,9 @@ namespace Wordle
             Console.Clear();
             words.DisplayAttempt();
             Console.WriteLine($"\nYou Have Guessed The Word " +
-                $"{(words.GuessedWord() ? "Correctly" : "Incorrectly")}");
+                $"{(words.GuessedWord() ? "Correctly" : "Incorrectly")}" +
+                $"\nThe Word is \u001b[32;1m{theWord}");
+            Console.ResetColor();
         }
     }
 }

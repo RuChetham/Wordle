@@ -29,6 +29,7 @@ namespace Wordle
                 if (attempts.Count != maxAttempts)
                 {
                     attempts.Add(newWord);
+                    if (attempt == correct) wonGame = true;
                     return true;
                 }
                 return false;
@@ -45,7 +46,7 @@ namespace Wordle
             {
                 if (word.OutputGuess(correct))
                 {
-                    wonGame = true;
+                    wonGame = true; // unnecessary
                 }
             }
         }
